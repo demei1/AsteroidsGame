@@ -6,7 +6,7 @@ Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 public void setup() 
 {
-  size(800,800);
+  size(600,600);
   background(0);
   thousandSunny = new Spaceship(width/2,height/2);
   //your code here
