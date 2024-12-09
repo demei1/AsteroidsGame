@@ -5,7 +5,6 @@ boolean dPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
-Asteriod rock;
 public void setup() 
 {
   size(600,600);
@@ -29,7 +28,8 @@ public void setup()
 public void draw()
 {
   background(0);
-  
+
+
   for ( int i = 0; i < asteriodsList.size(); i++){
   asteriodsList.get(i).move();
   asteriodsList.get(i).show();
@@ -56,8 +56,7 @@ public void draw()
   }
   thousandSunny.move();
   thousandSunny.show();
-  rock.show();
-  rock.move();
+  
 }
 public void keyPressed(){
   if ( key == 'w'){
