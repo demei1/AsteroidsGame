@@ -4,12 +4,24 @@ boolean aPressed = false;
 boolean dPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
+ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
+Asteriod rock;
 public void setup() 
 {
   size(600,600);
   background(0);
+  //Asteriod ArrayList
+  for ( int i = 0 ; i < 20; i++){
+    Asteriod rock = new Asteriod();
+    asteriodsList.add(rock);
+  
+  }
+  rock = new Asteriod();
+  
   thousandSunny = new Spaceship(width/2,height/2);
-  //your code here
+
+  
+  //spaceSky stars list
   for ( int i = 0; i < spaceSky.length; i++){
   spaceSky[i] = new Star();
   }
@@ -17,9 +29,22 @@ public void setup()
 public void draw() 
 {
   background(0);
+  
+  for ( int i = 0; i < asteriodsList.size(); i++){
+  asteriodsList.get(i).move();
+  asteriodsList.get(i).show();
+  float d = dist((float)thousandSunny.getX(), (float)thousandSunny.getY(), (float)asteriodsList.get(i).getX(), (float)asteriodsList.get(i).getY());
+  if (d <50)
+    asteriodsList.remove(i);
+  }
+  
+  //Show SpaceSky 
   for (int i = 0; i < spaceSky.length; i++){
   spaceSky[i].show();
   }
+  
+  
+  //Show Ship
   if (wPressed == true){
     thousandSunny.accelerate(.5);
   }
@@ -31,8 +56,8 @@ public void draw()
   }
   thousandSunny.move();
   thousandSunny.show();
-  //your code here
- 
+  rock.show();
+  rock.move();
 }
 public void keyPressed(){
   if ( key == 'w'){
