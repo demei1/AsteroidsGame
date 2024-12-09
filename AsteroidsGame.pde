@@ -15,7 +15,7 @@ public void setup()
     asteriodsList.add(rock);
   
   }
-  rock = new Asteriod();
+  
   
   thousandSunny = new Spaceship(width/2,height/2);
 
@@ -25,11 +25,10 @@ public void setup()
   spaceSky[i] = new Star();
   }
 }
-public void draw()
+public void draw() 
 {
   background(0);
-
-
+  
   for ( int i = 0; i < asteriodsList.size(); i++){
   asteriodsList.get(i).move();
   asteriodsList.get(i).show();
@@ -56,7 +55,6 @@ public void draw()
   }
   thousandSunny.move();
   thousandSunny.show();
-  
 }
 public void keyPressed(){
   if ( key == 'w'){
