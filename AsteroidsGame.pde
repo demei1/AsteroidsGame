@@ -26,7 +26,7 @@ public void setup()
   spaceSky[i] = new Star();
   }
 }
-public void draw() 
+public void draw()
 {
   background(0);
   
