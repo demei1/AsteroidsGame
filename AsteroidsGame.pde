@@ -1,3 +1,4 @@
+
 //your variable declarations here
 boolean wPressed = false;
 boolean aPressed = false;
@@ -29,14 +30,17 @@ public void draw()
 {
   background(0);
   
-  for ( int i = 0; i < asteriodsList.size(); i++){
+  for ( int i = asteriodsList.size()-1; i >= 0; i--){
   asteriodsList.get(i).move();
   asteriodsList.get(i).show();
   float d = dist((float)thousandSunny.getX(), (float)thousandSunny.getY(), (float)asteriodsList.get(i).getX(), (float)asteriodsList.get(i).getY());
-  if (d <50)
+  
+  if (d <50){
+     
     asteriodsList.remove(i);
-    i--;
-asteriodsList.add(new Asteriod());
+    asteriodsList.add( new Asteriod());
+  }
+   
   }
   
   //Show SpaceSky 
