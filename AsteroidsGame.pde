@@ -35,6 +35,8 @@ public void draw()
   float d = dist((float)thousandSunny.getX(), (float)thousandSunny.getY(), (float)asteriodsList.get(i).getX(), (float)asteriodsList.get(i).getY());
   if (d <50)
     asteriodsList.remove(i);
+    i--;
+asteriodsList.add(new Asteriod());
   }
   
   //Show SpaceSky 
