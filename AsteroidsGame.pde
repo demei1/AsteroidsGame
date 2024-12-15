@@ -67,19 +67,20 @@ public void draw()
   for ( int i = 0; i < bulletList.size(); i++){
     if (bulletList.get(i).getX() > 599 || bulletList.get(i).getY() > 599){
     bulletList.remove(i);
+    i--;
     }
     else {
        bulletList.get(i).accelerate(6.0);
        bulletList.get(i).move();
        bulletList.get(i).show();
        
-  for ( int j = asteriodsList.size()-1; j >= 0; j --){
+  for ( int j = 0; j < asteriodsList.size(); j++){
     float d = dist ((float)bulletList.get(i).getX(), (float)bulletList.get(i).getY(),(float)asteriodsList.get(j).getX(),(float)asteriodsList.get(j).getY());
       if (d < 25){
         asteriodsList.remove(j);    
         bulletList.remove(i);
         asteriodsList.add(new Asteriod());
-        i--;
+        j--;
         break;
       }
       }
