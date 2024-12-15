@@ -1,4 +1,3 @@
-
 //your variable declarations here
 boolean wPressed = false;
 boolean aPressed = false;
