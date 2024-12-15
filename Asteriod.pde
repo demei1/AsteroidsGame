@@ -1,7 +1,6 @@
 class Asteriod extends Floater{
   private double rotSpeed;
   public Asteriod(){
-  rotSpeed = (int)(Math.random()*4)-2;
   corners = 8;   
   xCorners = new int[corners];   
   yCorners = new int [corners];   
@@ -27,8 +26,9 @@ class Asteriod extends Floater{
   myCenterY = (int)(Math.random()*600); //holds center coordinates   
   myXspeed = .5; 
   myYspeed = .5; //holds the speed of travel in the x and y directions   
-  myPointDirection = 0; //holds current direction the ship is pointing in degrees    
-  }
+  myPointDirection = (int)(Math.random()*360); //holds current direction the ship is pointing in degrees    
+  rotSpeed = (int)(Math.random()*6)-2; 
+}
  
  
    public void move ()   //move the floater in the current direction of travel
