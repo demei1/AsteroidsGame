@@ -63,9 +63,7 @@ public void draw()
   thousandSunny.show();
   
   //Show Bullets
-   if (rPressed == true){
-    bulletList.add(new Bullet(thousandSunny));
-  }
+  
   
   for ( int i = bulletList.size()-1; i >= 0; i --){
     if (bulletList.get(i).getX() > 599 || bulletList.get(i).getY() > 599){
@@ -108,7 +106,10 @@ public void keyPressed(){
   rPressed = true;
   }
 }
-
+public void mouseReleased(){
+  bulletList.add( new Bullet(thousandSunny));
+  
+}
 public void keyReleased(){
   if ( key == 'w'){
     wPressed = false;
