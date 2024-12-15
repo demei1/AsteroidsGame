@@ -106,7 +106,7 @@ public void keyPressed(){
 }
 public void mouseReleased(){
   bulletList.add( new Bullet(thousandSunny));
-  bulletList.get( bulletList.size()-1).accelerate(2);
+  bulletList.get( bulletList.size()-1).accelerate(2.0);
 }
 public void keyReleased(){
   if ( key == 'w'){
