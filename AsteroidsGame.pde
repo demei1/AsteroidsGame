@@ -1,3 +1,4 @@
+
 //your variable declarations here
 boolean wPressed = false;
 boolean aPressed = false;
@@ -5,7 +6,6 @@ boolean dPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
-
 ArrayList <Bullet> bulletList = new ArrayList <Bullet>();
 public void setup() 
 {
@@ -44,31 +44,28 @@ public void draw()
   if (d <50){
     asteriodsList.remove(i);
     asteriodsList.add( new Asteriod());
-  } 
+    } 
   }
   
   //Show Bullets
   for ( int i = 0; i < bulletList.size(); i++){
     bulletList.get(i).move();
-    if (bulletList.get(i).getX() > 595 || bulletList.get(i).getY() > 595){
+    if (bulletList.get(i).getX() > 590 || bulletList.get(i).getY() > 590 || bulletList.get(i).getX() < 10 || bulletList.get(i).getY() < 10){
     bulletList.remove(i);
     i--;
-    }
-    else {
+    } else {
        bulletList.get(i).accelerate(6.0);
        bulletList.get(i).move();
        bulletList.get(i).show();
-       
-    for ( int j = 0; j < asteriodsList.size(); j++){
-    float d = dist ((float)bulletList.get(i).getX(), (float)bulletList.get(i).getY(),(float)asteriodsList.get(j).getX(),(float)asteriodsList.get(j).getY());
-      
-      if (d < 25){
-        asteriodsList.remove(j);    
-        bulletList.remove(i);
-        asteriodsList.add(new Asteriod());
-        j--;
-        break;
-      }
+        for ( int j = 0; j < asteriodsList.size(); j++){
+        float d = dist ((float)bulletList.get(i).getX(), (float)bulletList.get(i).getY(),(float)asteriodsList.get(j).getX(),(float)asteriodsList.get(j).getY());
+        if (d < 25){
+          asteriodsList.remove(j);    
+          bulletList.remove(i);
+          asteriodsList.add(new Asteriod());
+          j--;
+          break;
+        }
       }
     }
    
@@ -87,12 +84,7 @@ public void draw()
     thousandSunny.turn(-5);
   }
   thousandSunny.move();
-  thousandSunny.show();
-  
-  //Show Bullets
-  
-  
-  
+  thousandSunny.show(); 
 }
 
 
@@ -110,10 +102,12 @@ public void keyPressed(){
   thousandSunny.hyperSpace();  
   }
 }
+
 public void mouseReleased(){
   bulletList.add( new Bullet(thousandSunny));
   bulletList.get( bulletList.size()-1).accelerate(2.0);
 }
+
 public void keyReleased(){
   if ( key == 'w'){
     wPressed = false;
