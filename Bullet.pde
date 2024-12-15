@@ -3,7 +3,7 @@ class Bullet extends Floater{
   myCenterX = theShip.getX();
   myCenterY = theShip.getY();
   myPointDirection = theShip.getMyPointDirection();
-  
+  myColor = color(#8CE6F0);
   
   }
 
@@ -16,6 +16,7 @@ class Bullet extends Floater{
   }
   
   public void show(){
+    fill(myColor);
     ellipse ((float) myCenterX, (float) myCenterY, 10, 10);
   }
   public void move(){
