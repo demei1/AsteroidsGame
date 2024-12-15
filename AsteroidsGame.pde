@@ -1,8 +1,9 @@
+
 //your variable declarations here
 boolean wPressed = false;
 boolean aPressed = false;
 boolean dPressed = false;
-
+boolean rPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
@@ -62,7 +63,7 @@ public void draw()
   thousandSunny.show();
   
   //Show Bullets
-   if (mousePressed && (mouseButton == LEFT)){
+   if (rPressed == true){
     bulletList.add(new Bullet(thousandSunny));
   }
   
@@ -103,6 +104,9 @@ public void keyPressed(){
   if ( key == ' '){
   thousandSunny.hyperSpace();  
   }
+  if ( key == 'r'){
+  rPressed = true;
+  }
 }
 
 public void keyReleased(){
@@ -114,5 +118,8 @@ public void keyReleased(){
   }
   if ( key == 'd'){
     dPressed = false; 
+  }
+  if ( key == 'r'){
+    rPressed = false;
   }
 }
