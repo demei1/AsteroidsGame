@@ -31,6 +31,12 @@ public void draw()
 {
   background(0);
   
+  //Show SpaceSky 
+  for (int i = 0; i < spaceSky.length; i++){
+  spaceSky[i].show();
+  }
+  
+  
   //Show Asteriods
   for ( int i = asteriodsList.size()-1; i >= 0; i--){
   asteriodsList.get(i).move();
@@ -42,31 +48,10 @@ public void draw()
   } 
   }
   
-  //Show SpaceSky 
-  for (int i = 0; i < spaceSky.length; i++){
-  spaceSky[i].show();
-  }
-  
-  
-  //Show Ship
-  if (wPressed == true){
-    thousandSunny.accelerate(.5);
-  }
-  if (dPressed == true){
-    thousandSunny.turn(5);
-  }
-  if (aPressed == true){
-    thousandSunny.turn(-5);
-  }
-  thousandSunny.move();
-  thousandSunny.show();
-  
   //Show Bullets
-  
-  
   for ( int i = 0; i < bulletList.size(); i++){
     bulletList.get(i).move();
-    if (bulletList.get(i).getX() > 599 || bulletList.get(i).getY() > 599){
+    if (bulletList.get(i).getX() > 595 || bulletList.get(i).getY() > 595){
     bulletList.remove(i);
     i--;
     }
@@ -89,6 +74,26 @@ public void draw()
     }
    
   }
+  
+  
+  
+  //Show Ship
+  if (wPressed == true){
+    thousandSunny.accelerate(.5);
+  }
+  if (dPressed == true){
+    thousandSunny.turn(5);
+  }
+  if (aPressed == true){
+    thousandSunny.turn(-5);
+  }
+  thousandSunny.move();
+  thousandSunny.show();
+  
+  //Show Bullets
+  
+  
+  
 }
 
 
