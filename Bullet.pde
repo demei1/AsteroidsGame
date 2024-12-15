@@ -19,6 +19,7 @@ class Bullet extends Floater{
     fill(myColor);
     ellipse ((float) myCenterX, (float) myCenterY, 10, 10);
   }
+  
   public void move(){
   myXspeed = -myXspeed;
   myYspeed = -myYspeed;
