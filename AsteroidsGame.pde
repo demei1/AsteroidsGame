@@ -65,6 +65,7 @@ public void draw()
   
   
   for ( int i = 0; i < bulletList.size(); i++){
+    bulletList.get(i).move();
     if (bulletList.get(i).getX() > 599 || bulletList.get(i).getY() > 599){
     bulletList.remove(i);
     i--;
@@ -74,8 +75,9 @@ public void draw()
        bulletList.get(i).move();
        bulletList.get(i).show();
        
-  for ( int j = 0; j < asteriodsList.size(); j++){
+    for ( int j = 0; j < asteriodsList.size(); j++){
     float d = dist ((float)bulletList.get(i).getX(), (float)bulletList.get(i).getY(),(float)asteriodsList.get(j).getX(),(float)asteriodsList.get(j).getY());
+      
       if (d < 25){
         asteriodsList.remove(j);    
         bulletList.remove(i);
