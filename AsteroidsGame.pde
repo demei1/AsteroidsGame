@@ -3,7 +3,6 @@
 boolean wPressed = false;
 boolean aPressed = false;
 boolean dPressed = false;
-boolean rPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
@@ -103,7 +102,7 @@ public void keyPressed(){
   thousandSunny.hyperSpace();  
   }
   if ( key == 'r'){
-  rPressed = true;
+  bulletList.add( new Bullet(thousandSunny));
   }
 }
 public void mouseReleased(){
@@ -119,8 +118,5 @@ public void keyReleased(){
   }
   if ( key == 'd'){
     dPressed = false; 
-  }
-  if ( key == 'r'){
-    rPressed = false;
   }
 }
