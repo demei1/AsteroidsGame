@@ -64,7 +64,7 @@ public void draw()
   //Show Bullets
   
   
-  for ( int i = bulletList.size()-1; i >= 0; i --){
+  for ( int i = 0; i < bulletList.size(); i++){
     if (bulletList.get(i).getX() > 599 || bulletList.get(i).getY() > 599){
     bulletList.remove(i);
     }
@@ -79,6 +79,7 @@ public void draw()
         asteriodsList.remove(j);    
         bulletList.remove(i);
         asteriodsList.add(new Asteriod());
+        i--;
         break;
       }
       }
@@ -101,13 +102,10 @@ public void keyPressed(){
   if ( key == ' '){
   thousandSunny.hyperSpace();  
   }
-  if ( key == 'r'){
-  bulletList.add( new Bullet(thousandSunny));
-  }
 }
 public void mouseReleased(){
   bulletList.add( new Bullet(thousandSunny));
-  
+  bulletList.get( bulletList.size()-1).accelerate(2);
 }
 public void keyReleased(){
   if ( key == 'w'){
