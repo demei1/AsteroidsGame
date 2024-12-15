@@ -7,6 +7,7 @@ boolean dPressed = false;
 Spaceship thousandSunny;
 Star []spaceSky = new Star[200];
 ArrayList <Asteriod> asteriodsList = new ArrayList <Asteriod>();
+
 ArrayList <Bullet> bulletList = new ArrayList <Bullet>();
 public void setup() 
 {
@@ -20,6 +21,7 @@ public void setup()
   } 
   
   thousandSunny = new Spaceship(width/2,height/2);
+  
   
   //spaceSky stars list
   for ( int i = 0; i < spaceSky.length; i++){
